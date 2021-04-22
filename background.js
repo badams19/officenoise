@@ -34,6 +34,9 @@ let goodbyeGabePt1 = new Audio(chrome.runtime.getURL("noises/goodbyegabept1.ogg"
 let goodbyeGabePt2 = new Audio(chrome.runtime.getURL("noises/goodbyegabept2.ogg"));
 let goodbyeGabeVid = "https://youtu.be/7dgqhKxH3jg?t=217";
 
+let dwightFalse = new Audio(chrome.runtime.getURL("noises/dwightfalse.ogg"));
+let dwightIdiot = new Audio(chrome.runtime.getURL("noises/dwightidiot.ogg"));
+
 
 let basketball = {
 	name: "basketball",
@@ -41,10 +44,10 @@ let basketball = {
 	part1: basketballPt1,
 	part2: basketballPt2,
 	quoteGuesses: {
-		guess1: "...funk.",
-		guess2: "...motown.",
+		guess1: "...pop.",
+		guess2: "...disco.",
 		guess3: "...jazz.",
-		guess4: "...blues."
+		guess4: "...R&B."
 	},
 	quoteAnswer: "...jazz.",
 	vid: basketballVid
@@ -170,10 +173,13 @@ let goodbyeGabe = {
 	vid: goodbyeGabeVid
 };
 
+// might add more noises for wrong answers
+let incorrectNoises = [dwightFalse, dwightIdiot];
+
 
 let allNoises = [basketball, grilledFoot, bearIsBest, imPregnant, moroccanXmas, dogsBarking, boboddy, triviacalypse, goodbyeGabe];
 
-export { allNoises };
+export { allNoises, incorrectNoises };
 
 // chrome.commands.onCommand.addListener(function(command) {
 // 	if (command === "play-noise") {

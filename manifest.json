@@ -8,9 +8,27 @@
     "persistent": false
   },
   "web_accessible_resources": [
+    "noises/basketballpt1.ogg",
+    "noises/basketballpt2.ogg",
+    "noises/grilledfootpt1.ogg",
+    "noises/grilledfootpt2.ogg",
     "noises/bearisbestpt1.ogg",
-     "noises/bearisbestpt2.ogg",
-     "background.js"
+    "noises/bearisbestpt2.ogg",
+    "noises/impregnantpt1.ogg",
+    "noises/impregnantpt2.ogg",
+    "noises/moroccanxmaspt1.ogg",
+    "noises/moroccanxmaspt2.ogg",
+    "noises/dogsbarkingpt1.ogg",
+    "noises/dogsbarkingpt2.ogg",
+    "noises/boboddypt1.ogg",
+    "noises/boboddypt2.ogg",
+    "noises/triviacalypsept1.ogg",
+    "noises/triviacalypsept2.ogg",
+    "noises/goodbyegabept1.ogg",
+    "noises/goodbyegabept2.ogg",
+    "noises/dwightfalse.ogg",
+    "noises/dwightidiot.ogg",
+    "background.js"
   ],
   "commands": {
     "choose-noise": {
