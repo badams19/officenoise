@@ -8,3 +8,10 @@ button {
 	background-color: #17459D;
 	color: #FFFFFF;
 }
+
+/*.icons {
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}*/

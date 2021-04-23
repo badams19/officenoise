@@ -36,7 +36,9 @@ function secondPopupSetup() {
     elemGenerator('button', 'season7', 'seasonbutton', '7');
     elemGenerator('button', 'season8', 'seasonbutton', '8');
     elemGenerator('button', 'season9', 'seasonbutton', '9');
-    elemGenerator('div', 'liveslefttext', null, 'Lives Left: ' + getLives());
+    elemGenerator('div', 'liveslefttext', null, 'Lives Left: ');
+    livesToBeets(getLives());
+
     secondPopupAction();
 }
 
@@ -70,7 +72,9 @@ function thirdPopupSetup() {
     elemGenerator('button', 'guess2', 'quotebutton', curNoise['quoteGuesses']['guess2']);
     elemGenerator('button', 'guess3', 'quotebutton', curNoise['quoteGuesses']['guess3']);
     elemGenerator('button', 'guess4', 'quotebutton', curNoise['quoteGuesses']['guess4']);
-    elemGenerator('div', 'liveslefttext', null, 'Lives Left: ' + getLives());
+    elemGenerator('div', 'liveslefttext', null, 'Lives Left: ');
+    livesToBeets(getLives());
+
     thirdPopupAction();
 }
 
@@ -125,7 +129,11 @@ function elemGenerator(elemType, elemID, elemClass, elemInnerHTML) {
     let element = document.createElement(elemType);
     element.id = elemID;
     element.className = elemClass;
-    element.innerHTML = elemInnerHTML;
+    if (elemType !== "img") {
+        element.innerHTML = elemInnerHTML;
+    } else {
+        element.src = elemInnerHTML;
+    }
     document.body.appendChild(element);
 }
 
@@ -135,7 +143,7 @@ function resetLives() {
 
 function decrementLives() {
     numLives--;
-    getByID('liveslefttext').innerHTML = ('Lives Left: ' + numLives);
+    getByID('beeticon' + (numLives+1)).remove();
     if (numLives === 0) {
         gameOverPopupSetup();
     }
@@ -143,4 +151,15 @@ function decrementLives() {
 
 function getLives() {
     return numLives;
+}
+
+function livesToBeets(num) {
+    switch (num) {
+        case 2: 
+            return elemGenerator('img', 'beeticon1', 'icons', "beeticon48.png") + elemGenerator('img', 'beeticon2', 'icons', "beeticon48.png");
+        case 1:
+            return elemGenerator('img', 'beeticon1', 'icons', "beeticon48.png");
+        default:
+            return;
+    }
 }

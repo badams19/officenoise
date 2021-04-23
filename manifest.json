@@ -46,7 +46,16 @@
     }
   },
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "beeticon16.png",
+      "32": "beeticon32.png"
+    }
+  },
+  "icons": {
+    "16": "beeticon16.png",
+    "32": "beeticon32.png",
+    "48": "beeticon48.png"
   },
   "manifest_version": 2
 }
