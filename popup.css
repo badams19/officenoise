@@ -1,13 +1,55 @@
-button {
-	padding: 0.3em 2.0em;
-	text-align: : center;
-	width: 250px;
+* {
+	box-sizing: border-box;
 }
 
-.replay {
+.textdiv {
+	width: 235px;
+}
+
+button {
+	/*padding: 0.3em 2.0em;
+	text-align: : center;*/
+	padding: 0.25em 0.75em;
+	min-width: 10ch;
+    min-height: 44px;
+    text-align: center;
+  	line-height: 1.1;
+  	transition: 150ms all ease-in-out;
+	border: none;
+	color: #ffffff;
+	background-color: #361d19;
+	padding: 0.1em 0.1em;
+	margin: 2px 2px 2px 2px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.quotebutton, .replaybutton {
+	width: 100%;
+	white-space: nowrap;
+}
+
+/*possible background color!!! #456cb5*/
+
+/*.replay:hover {
+	background-color: #FFFFFF;
+	color: #17459D;
+}*/
+
+button:hover {
+	background-color: #fdba51;
+	transform: scale(1.05);
+}
+
+button:active {
+	transform: scale(.95);
+}
+/*.replay {
 	background-color: #17459D;
 	color: #FFFFFF;
-}
+}*/
 
 /*.icons {
 	image-rendering: -webkit-optimize-contrast;
