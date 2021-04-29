@@ -91,7 +91,7 @@ let imPregnant = {
 	quoteGuesses: {
 		guess1: "...I love you.",
 		guess2: "...I'm pregnant.",
-		guess3: "...[" + ("Kelly starts crying").italics() + "].",
+		guess3: "...[*Kelly starts crying*].",
 		guess4: "...I'm suing you for emotional damage."
 	},
 	quoteAnswer: "...I'm pregnant.",
@@ -105,7 +105,7 @@ let moroccanXmas = {
 	part2: moroccanXmasPt2,
 	quoteGuesses: {
 		guess1: "If you don't move the tree, I will ruin your reputation.",
-		guess2: "[" + ("Phyllis slaps her").italics() + "].",
+		guess2: "[*Phyllis slaps her*].",
 		guess3: "Okay.",
 		guess4: "I'm getting Bob."
 	},
@@ -152,7 +152,7 @@ let triviacalypse = {
 		guess1: "...maybe he was the original \"Tampa Bay Ray\"!",
 		guess2: "...what do blind people think about?",
 		guess3: "...what is Stanley writing?",
-		guess4: "...maybe it's a trick question. What did Ray Charles have on his " + ("feet").italics() + "?"
+		guess4: "...maybe it's a trick question. What did Ray Charles have on his feet?"
 	},
 	quoteAnswer: "...what do blind people think about?",
 	vid: triviacalypseVid

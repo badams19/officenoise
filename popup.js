@@ -36,7 +36,7 @@ function secondPopupSetup() {
     elemGenerator('button', 'season7', 'seasonbutton', '7');
     elemGenerator('button', 'season8', 'seasonbutton', '8');
     elemGenerator('button', 'season9', 'seasonbutton', '9');
-    elemGenerator('div', 'liveslefttext', 'textdiv', 'Lives Left: ');
+    elemGenerator('div', 'liveslefttext', 'textdiv', 'Lives Left');
     livesToBeets(getLives());
 
     secondPopupAction();
@@ -72,7 +72,7 @@ function thirdPopupSetup() {
     elemGenerator('button', 'guess2', 'quotebutton', curNoise['quoteGuesses']['guess2']);
     elemGenerator('button', 'guess3', 'quotebutton', curNoise['quoteGuesses']['guess3']);
     elemGenerator('button', 'guess4', 'quotebutton', curNoise['quoteGuesses']['guess4']);
-    elemGenerator('div', 'liveslefttext', 'textdiv', 'Lives Left: ');
+    elemGenerator('div', 'liveslefttext', 'textdiv', 'Lives Left');
     livesToBeets(getLives());
 
     thirdPopupAction();

@@ -1,19 +1,26 @@
 * {
 	box-sizing: border-box;
+	font-family: "American Typewriter", "Courier New";
+	background-color: #85bbd5;
 }
 
 .textdiv {
-	width: 235px;
+	width: 20.0em;
+	font-size: 1.5em;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#liveslefttext {
+	justify-content: start;
 }
 
 button {
-	/*padding: 0.3em 2.0em;
-	text-align: : center;*/
 	padding: 0.25em 0.75em;
 	min-width: 10ch;
     min-height: 44px;
     text-align: center;
-  	line-height: 1.1;
   	transition: 150ms all ease-in-out;
 	border: none;
 	color: #ffffff;
@@ -31,14 +38,8 @@ button {
 	white-space: nowrap;
 }
 
-/*possible background color!!! #456cb5*/
-
-/*.replay:hover {
-	background-color: #FFFFFF;
-	color: #17459D;
-}*/
-
 button:hover {
+	color: #000000;
 	background-color: #fdba51;
 	transform: scale(1.05);
 }
@@ -46,14 +47,5 @@ button:hover {
 button:active {
 	transform: scale(.95);
 }
-/*.replay {
-	background-color: #17459D;
-	color: #FFFFFF;
-}*/
 
-/*.icons {
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: auto;
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
-}*/
+/*keyframes??*/
