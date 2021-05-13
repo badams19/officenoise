@@ -25,17 +25,17 @@ function firstPopupAction() {
 
 function secondPopupSetup() {
     document.body.innerHTML = "";
-    elemGenerator('button', 'replayfirstnoise', 'replaybutton', 'Click me to replay the noise.');
+    elemGenerator('button', 'replayfirstnoise', 'replaybutton', 'Click me to replay the noise.', true);
     elemGenerator('div', 'popup2text', 'textdiv', 'Guess the correct season for part two!');
-    elemGenerator('button', 'season1', 'seasonbutton', '1');
-    elemGenerator('button', 'season2', 'seasonbutton', '2');
-    elemGenerator('button', 'season3', 'seasonbutton', '3');
-    elemGenerator('button', 'season4', 'seasonbutton', '4');
-    elemGenerator('button', 'season5', 'seasonbutton', '5');
-    elemGenerator('button', 'season6', 'seasonbutton', '6');
-    elemGenerator('button', 'season7', 'seasonbutton', '7');
-    elemGenerator('button', 'season8', 'seasonbutton', '8');
-    elemGenerator('button', 'season9', 'seasonbutton', '9');
+    elemGenerator('button', 'season1', 'seasonbutton', '1', true);
+    elemGenerator('button', 'season2', 'seasonbutton', '2', true);
+    elemGenerator('button', 'season3', 'seasonbutton', '3', true);
+    elemGenerator('button', 'season4', 'seasonbutton', '4', true);
+    elemGenerator('button', 'season5', 'seasonbutton', '5', true);
+    elemGenerator('button', 'season6', 'seasonbutton', '6', true);
+    elemGenerator('button', 'season7', 'seasonbutton', '7', true);
+    elemGenerator('button', 'season8', 'seasonbutton', '8', true);
+    elemGenerator('button', 'season9', 'seasonbutton', '9', true);
     elemGenerator('div', 'liveslefttext', 'textdiv', 'Lives Left');
     livesToBeets(getLives());
 
@@ -45,6 +45,11 @@ function secondPopupSetup() {
 function secondPopupAction() {
     getByID('replayfirstnoise').addEventListener('click', (e)=>{
         curNoise.part1.play();
+        buttonEnabler(true);
+    });
+
+    curNoise.part1.addEventListener('ended', (e)=>{
+        buttonEnabler(false);
     });
 
     let seasonGuesses = document.getElementsByClassName('seasonbutton');
@@ -66,12 +71,12 @@ function secondPopupAction() {
 
 function thirdPopupSetup() {
     document.body.innerHTML = "";
-    elemGenerator('button', 'replaysecondnoise', 'replaybutton', 'Click me to replay part two.');
+    elemGenerator('button', 'replaysecondnoise', 'replaybutton', 'Click me to replay part two.', true);
     elemGenerator('div', 'popup3text', 'textdiv', 'Congratulations resourceful salesperson. You advance to the next round! What is the next line?');
-    elemGenerator('button', 'guess1', 'quotebutton', curNoise['quoteGuesses']['guess1']);
-    elemGenerator('button', 'guess2', 'quotebutton', curNoise['quoteGuesses']['guess2']);
-    elemGenerator('button', 'guess3', 'quotebutton', curNoise['quoteGuesses']['guess3']);
-    elemGenerator('button', 'guess4', 'quotebutton', curNoise['quoteGuesses']['guess4']);
+    elemGenerator('button', 'guess1', 'quotebutton', curNoise['quoteGuesses']['guess1'], true);
+    elemGenerator('button', 'guess2', 'quotebutton', curNoise['quoteGuesses']['guess2'], true);
+    elemGenerator('button', 'guess3', 'quotebutton', curNoise['quoteGuesses']['guess3'], true);
+    elemGenerator('button', 'guess4', 'quotebutton', curNoise['quoteGuesses']['guess4'], true);
     elemGenerator('div', 'liveslefttext', 'textdiv', 'Lives Left');
     livesToBeets(getLives());
 
@@ -81,6 +86,11 @@ function thirdPopupSetup() {
 function thirdPopupAction() {
     getByID('replaysecondnoise').addEventListener('click', (e)=>{
         curNoise.part2.play();
+        buttonEnabler(true);
+    });
+
+    curNoise.part2.addEventListener('ended', (e)=>{
+        buttonEnabler(false);
     });
 
     let quoteGuesses = document.getElementsByClassName('quotebutton');
@@ -125,7 +135,7 @@ function getByID(id) {
    return document.getElementById(id);
 }
 
-function elemGenerator(elemType, elemID, elemClass, elemInnerHTML) {
+function elemGenerator(elemType, elemID, elemClass, elemInnerHTML, disabled=false) {
     let element = document.createElement(elemType);
     element.id = elemID;
     element.className = elemClass;
@@ -134,6 +144,7 @@ function elemGenerator(elemType, elemID, elemClass, elemInnerHTML) {
     } else {
         element.src = elemInnerHTML;
     }
+    element.disabled = disabled;
     document.body.appendChild(element);
 }
 
@@ -162,4 +173,10 @@ function livesToBeets(num) {
         default:
             return;
     }
+}
+
+function buttonEnabler(disabled) {
+    Array.from(document.getElementsByTagName('button')).forEach((elem) => {
+        elem.disabled = disabled;
+    });
 }

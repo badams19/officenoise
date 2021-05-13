@@ -1,11 +1,25 @@
+:root {
+	--main-text-color: #ffffff;
+	--main-bg-color: #85bbd5;
+	--main-btn-color: #361d19;
+	--btn-hvr-color: #fdba51;
+	--make-opaque: #ffffff00;
+}
+
 * {
-	box-sizing: border-box;
 	font-family: "American Typewriter", "Courier New";
-	background-color: #85bbd5;
+	background-color: var(--main-bg-color);
+}
+
+body {
+	box-sizing: border-box;
+	max-width: 100%;
+	margin-left: 1em;
+	margin-right: 1em;
 }
 
 .textdiv {
-	width: 20.0em;
+	width: 100%;
 	font-size: 1.5em;
 	display: inline-flex;
 	align-items: center;
@@ -13,20 +27,21 @@
 }
 
 #liveslefttext {
+	display: inline-flex;
+	align-items: start;
 	justify-content: start;
 }
 
 button {
 	padding: 0.25em 0.75em;
-	min-width: 10ch;
-    min-height: 44px;
+	margin: 0.4em 0.4em;
+    min-width: 9.45em;
+    min-height: 4em;
     text-align: center;
   	transition: 150ms all ease-in-out;
 	border: none;
-	color: #ffffff;
-	background-color: #361d19;
-	padding: 0.1em 0.1em;
-	margin: 2px 2px 2px 2px;
+	color: var(--main-text-color);
+	background-color: var(--main-btn-color);
 	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
@@ -34,18 +49,30 @@ button {
 }
 
 .quotebutton, .replaybutton {
-	width: 100%;
-	white-space: nowrap;
+	width: 30.0em;
+	/*white-space: nowrap;*/
 }
 
-button:hover {
+.icons {
+	display: inline-flex;
+	align-items: start;
+	justify-content: start;
+}
+
+button:enabled:hover {
 	color: #000000;
-	background-color: #fdba51;
+	background-color: var(--btn-hvr-color);
 	transform: scale(1.05);
 }
 
-button:active {
+button:enabled:active {
 	transform: scale(.95);
 }
 
+button:disabled {
+	color: var(--make-opaque);
+}
+
 /*keyframes??*/
+
+
